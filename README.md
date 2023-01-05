@@ -1,2 +1,4 @@
 # hexapod_pivot_point_C_sharp_console
-The program performs fast referencing of the hexapod and setting pivot point of the hexapod. 
+The program performs fast referencing of the hexapod and setting the pivot point of the hexapod. 
+
+The C# program asks for IP address of hexapod, for example 147.213.112.19, and port of hexapod, for example 50000. It creates session with hexapod using TCPClient in the line 26. In the line 27, the NetworkStream is established. It asks you if you want to perform fast referncing of hexapod. If yes (Y or y), then it sends FRF command for fast referencing to hexapod. Once, the hexapod is referenced, you can set pivot point of hexapod. You will set R, S, T pivot point of hexapod, where R is the X coordinate of pivot point, S is the Y coordinate of pivot point and T is the Z coordinate of pivot point. After setting the pivot point, the SPI? command is send to the hexapod, which asks for current pivot point. The current pivot point is printed into the console application. Finally, stream communication is flushed and closed. The session with hexapod is also closed. 
